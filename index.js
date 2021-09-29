@@ -25,12 +25,25 @@ class Timer {
     onDurationChange() {
         
     }
-    tick = () => {
-
-        
-        timeRemaining = timeRemaining - 1;
-        console.log('tick');
+    tick = () => { 
+        if (this.timeRemaining <= 0) {
+            this.pause();
+        } else {
+            this.timeRemaining = this.timeRemaining - 1;
+        }
+       
+            
     }
+
+    // this is a getter,this will get the value.
+    get timeRemaining() {
+        return parseFloat(this.durationInput.value);
+    }
+    // this is a setter,this will set the value
+    set timeRemaining(time) {
+        return this.durationInput.value = time;
+    }
+
 }
 
 
