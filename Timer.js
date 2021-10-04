@@ -16,17 +16,15 @@ class Timer {
     }
     start = () => {
         if (this.onStart) {
-            this.onStart();
+            this.onStart(this.timeRemaining);
         }
         this.tick();
-       this.intervalId = setInterval(this.tick, 1000);
+       this.intervalId = setInterval(this.tick, 20);
       
     }
-
     pause = () => {
         clearInterval(this.intervalId);
     }
-
     onDurationChange() {
         
     }
@@ -37,9 +35,9 @@ class Timer {
                 this.onComplete();
             }
         } else {
-            this.timeRemaining = this.timeRemaining - 1;
+            this.timeRemaining = this.timeRemaining - .02;
             if (this.onTick) {
-                this.onTick();
+                this.onTick(this.timeRemaining);
             }
         }     
     }
@@ -50,7 +48,7 @@ class Timer {
     }
     // this is a setter,this will set the value
     set timeRemaining(time) {
-        return this.durationInput.value = time;
+        return this.durationInput.value = time.toFixed(2);
     }
 
 }
