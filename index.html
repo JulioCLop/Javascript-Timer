@@ -4,26 +4,32 @@
    <meta charset="UTF-8">
    <script src="https://kit.fontawesome.com/6c1bc1767f.js" crossorigin="anonymous"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
    <title>Timer App</title>
 </head>
 <body>
-<div>
+  
+<div class='main-container'>
+   
     <svg height='400' width='400'>
         <circle 
         transform='rotate(-90 200 200)'
-        fill='transparent' 
-        stroke='black' 
+        fill='rgba(0,0,0,0.9)' 
+        stroke='white' 
         stroke-width='15'
         r='190' 
         cx='200' 
         cy='200' 
         />
     </svg>
-    
+<div class='input-btn-container'>
+    <label>Set Timer</label>
     <input id='duration' value="30" / >
     <button id='start'><i class="fas fa-play"></i></button>
     <button id='pause'><i class="fas fa-pause"></i></button>
 
+</div>
+   
 </div>
 
 

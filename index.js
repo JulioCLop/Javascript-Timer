@@ -21,6 +21,9 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
        
     },
     onComplete() {
+        const labelTag = document.querySelector('label');
+        labelTag.innerText = 'Timer Complete';
         console.log('Timer is complete');
+        
     }
 });
